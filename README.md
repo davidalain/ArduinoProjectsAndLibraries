@@ -1,3 +1,3 @@
 # ArduinoProjectsAndLibraries
 
-Some projects and some default or improved Arduino Libraries
+Some Arduino projects using default and improved Arduino Libraries
