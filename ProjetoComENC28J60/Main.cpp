@@ -2,6 +2,9 @@
 #include "Arduino.h"
 #include "Ethernet28J60.h"
 
+#define URL_YES	"davidalain=1"
+#define URL_NO	"davidalain=0"
+
 static uint8_t mac[6] = {0x54, 0x55, 0x58, 0x10, 0x00, 0x24};
 static uint8_t ip[4] = {192, 168, 0, 199};
 static uint16_t port = 80;
@@ -30,11 +33,11 @@ void loop()
 			ether.print("<H1>Server is running</H1><br/>");
 			ether.respond();
 		}
-		else if(memcmp(request, "davidalain=1", sizeof("davidalain=1")-1) == 0){
+		else if(memcmp(request, URL_YES, sizeof(URL_YES)-1) == 0){
 			ether.print("<H1>David Alain says YES</H1><br/>");
 			ether.respond();
 		}
-		else if(memcmp(request, "davidalain=0", sizeof("davidalain=0")-1) == 0){
+		else if(memcmp(request, URL_NO, sizeof(URL_NO)-1) == 0){
 			ether.print("<H1>David Alain says NO</H1><br/>");
 			ether.respond();
 		}
